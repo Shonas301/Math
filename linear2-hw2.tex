@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 35300: HW 2}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Question}
+An \(m\) x \(n\) matrix \(A\) is called \(upper\) \(triangular\) if all entries lying below the diagonal entries are zero, that is, \(A_{ij} = 0\) if \( i > j\). Prove that the upper triangular matrices form a subspace of \(\textbf{M}_{m x n}(F)\).
+\subsection*{Answer}
+Let \(\textbf{M}_{m x n}(F)\) be denoted as the vector space \(\textbf{V}\) of all \(m\) x \(n\) matrices
+\\ \(\textbf{W} = \{ A \in \textbf{V} | A_{ij} = 0\) when \(i > j \}\) defines the \(upper\) \(triangular\) matrices.
+\\ \\ \(\textbf{W}\) is a vector subspace if and only if: (a) the \(m\) x \(n\) zero matrix \(0_{m x n} \in \textbf{W}\), (b) \(A + B \in \textbf{W}\) whenever \(A, B \in \textbf{W}\), and (c) \(cA \in \textbf{W}\) whenever \(c \in F\) and \(A \in \textbf{W}\)
+\begin{enumerate}[label=\alph*]
+\item \(0_{m x n}\) exists natively in \(\textbf{W}\) because it follows the \(A_{ij}\) set rule
+\item Let \(A, B \in W\): For \(A_{ij}, B_{ij}\) when \(j \geq i\) is simply the addition defined under the field \(A_{ij} + B_{ij}\) which does not violate the set rule. \\ For times when \(j < i\) it is \(0 + 0 = 0\) which maintains the set rule, so \(\textbf{W}\) is closed under addition
+\item For all \(c \in F\) and \(A \in \textbf{W}\), \(cA\) takes the form of \(cA_{ij}\) for some \(i, j \in \mathbb{N}\). \\ When \(j \geq i\) it follows the multiplication under the field and remains a member of \(\textbf{W}\). \\ When \(i > j\) it is \(c0 = 0\) by the fact that \(\textbf{V}\) is a vector space. 
+\end{enumerate}
+Therefore \(\textbf{W}\) is a vector space. 
+\section*{Problem 2}
+\subsection*{Question}
+Show that if \\ \hspace*{.5cm} \(\quad M_{1} = \begin{pmatrix} 
+1 & 0 \\
+0 & 0 \end{pmatrix} \), 
+ \(\quad M_{2} = \begin{pmatrix} 
+0 & 0 \\
+0 & 1 \end{pmatrix} \),\(\quad\) and
+ \(\quad M_{3} = \begin{pmatrix} 
+0 & 1 \\
+1 & 0 \end{pmatrix} \), 
+\\ then the span of \(\{M_{1}, M_{2}, M_{3}\}\) is the set of all symmetric 2 x 2 matrices.
+\subsection*{Answer}
+\(\textbf{V} = \textbf{M}_{2x2}(F)\) is the vector space of 2 x 2 matrices
+\\ \(\textbf{W} = {A \in \textbf{V} | A^{t} = A}\) is the collection of symmetric 2 x 2 matrices
+\\ span\((\{M_{1}, M_{2}, M_{3}\} \subseteq \textbf{W})\) because each matrices exists natively in \(\textbf{W}\) as the transpose does not affect their arrangment, and when added in any combination \(aM_{1} + bM_{2} + cM_{3} = dM_{4}\) such that \(M_{4}\) is also unnaffected by the transpose. 
+\\ Conversly, by the definition of transpose, \(A_{ij} = A_{ji}\), we have few cases under 2 x 2 matrices. \(A_{11}, A_{12}, A_{21}, A_{22}\). The transpose does not affect the order of the matrices except in the case of \(A_{12} = A_{21}\) so it follows that \(A^{t} = A\) if and only if \(A_{12} = A_{21}\). 
+\\ In our circumstance we can form any matrices \(A = A^{t}\) with:
+\\\hspace*{.5cm} \(\quad A = \begin{pmatrix}
+A_{11} & A_{12} \\
+A_{21} & A_{22} \end{pmatrix} = A_{11}M_{1} + A_{22}M_{2} + A_{12}M_{3} \)
+\\ As the A stated above is the definition of \(A^{t} = A\) and A is the definition of the span(\(\{M_{1}, M_{2}, M_{3}\}\) then \(\textbf{W} \subseteq A \rightarrow \textbf{W} \subseteq \) span(\(\{M_{1}. M_{2}, M_{3}\}\)
+\\Thus span(\(\{M_{1}. M_{2}, M_{3}\}\) = \(W\) the set of all symmetric 2 x 2 matrices. 
+\end{document}

@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\begin{document}
+\title{MA 341: HW 2}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Question}
+Prove that if \(X\) is a set, \(\mathscr{T} \subseteq \mathscr{P}(X)\) is a topology on \(X\), and \(I \subseteq \mathscr{T}\) is a finite set, then \((\bigcap\limits_{U \in I}U) \in \mathscr{T}\)
+\subsection*{Answer}
+If \(I \subseteq \mathscr{T}\) then all \(U \subseteq \mathscr{T}\) by transitivity of sets. 
+\\ Using the second property of topologies \(U_{1}, U_{2} \in \mathscr{T}\) states \(U_{1} \cap U_{2} \in \mathscr{T}\)
+\\ Continuing to choose an arbitrary element \(U_{3} \in \mathscr{T}\) implies \(\bigcap\limits_{U \in I}U \in \mathscr{T}\)
+\section*{Problem 2}
+\subsection*{Question}
+Under what conditions on a set \(X\) does \(X\) have a unique topology?
+\subsection*{Answer}
+\(X\) has a unique topology when \(X = \{\emptyset\} or X = \{x\} \)
+\\ Every set \(X\) has the Indiscrete and Discrete Topologies, and the only way to set these equal to one another is to allow \(X\) to be the emptyset or the singleton set.
+\section*{Problem 3}
+Let \(X\) be a set and define \(\mathscr{T}_{co-fin} \subseteq \mathscr{P}(X)\) by \(\mathscr{T}_{co-fin} = \{A \subseteq X |  X - A\) is finite \(\} \cup \{\emptyset\}\). 
+\subsection*{Question}
+\begin{enumerate}[label=\alph*]
+\item Prove that \(\mathscr(T)_{co-fin}\) is a topology on \(X\)
+\item Prove that if \(X\) is infinite, then \(\mathscr{T}_{co-fin} \neq \mathscr{T}_{dis}\) where \(\mathscr{T}_{dis}\) is the discrete topology on \(X\).
+\item Prove that if \(|X| > 1\), then \(\mathscr{T}_{co-fin} \neq \mathscr{T}_{triv}\) where \(\mathscr{T}_{triv}\) is the trivial topology. 
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=\alph*]
+\item (i) \(\emptyset \in \mathscr{T}_{co-fin}\) by construction.
+	\\ The complement of X is \(\emptyset\) which is in \(\mathscr{T}_{co-fin}\) by definition, thus \(X \in \mathscr{T}_{co-fin}\) 
+	\\ (ii) For \(U_{1}, U_{2} \in \mathscr{T}_{co-fin}\) states each sets compliment is finite. Thus \((A - U_{1}) \cap (A - U_{2}) \) is finite and in \(A\). Therefore \(U_{1} \cap U_{2} \in \mathscr{T}_{co-fin}\)
+	\\ (iii)The compliment of \(I\) is finite by definition of \(\mathscr{T}_{co-fin}\) 
+	\\ Each compliment \(U \in I\) is finite as well thus each \(U\) is closed.
+	\\ The union of closed sets are all closed
+	\\ \(U \in \mathscr{T}_{co-fin}\)
+\item By construction the discrete space is Hausdorff
+	\\ If \(U_{1}, U_{2} \in \mathscr{T}_{co-fin}\) then \(X - U_{1}\) and \(X - U_{2}\) are both finite
+	\\ \((X - U_{1}) \cup (X - U_{2}) = X - (U_{1} \cap U_{2})\) and \(U_{1} \cap U_{2} \in \mathscr{T}_{co-fin}\)
+	\\ Because \(X\) is infinite \(U_{1} \cap U_{2} \ne \emptyset\)
+	\\ This implies \(\mathscr{T}_{co-fin}\) is not a Hausdorff space and \(\mathscr{T}_{co-fin} \ne \mathscr{T}_{disc}\) 
+\item If \(|X| > 1\), then \(\exists x,y \in X\) such that \(N_{x} \ne N_{y}\) for\( N_{x}, N_{y} \in \mathscr{T}_{co-fin}\) because each neighborhood is closed
+	\\ Therefore the cofinite topology on X is at least \(\textbf{T}_{0}\) which the trivial topology cannot be. Therefore the are not equal.
+\end{enumerate}
+\section*{Problem 4}
+Let \((X, \mathscr{T})\) be a topological space and \(A \subseteq X\)
+\subsection*{Question}
+\begin{enumerate}[label=\alph*]
+\item Prove that Int\((X - A) = X - \overline{A}\)
+\item Prove that \(\overline{X -A} = X -\) Int\(A\)
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=\alph*]
+\item Int(\(X - A\)) = \(x \in U \in X\) and \(x \ni A\)
+	\\\(X\) - \(\overline{A}\) removes all references to elements of A in X \(A \cap X = \emptyset\) 
+	\\ Therefore Int(\(X - A\)) = \(X\) - Int(\(A\))
+\item \(x \in \overline{X-A}\) implies \(x \in X\\A\)
+	\\ \(X\) - Int(\(A\)) = Elements of \(X\) which are not in any \(U \in A\) such that \(x \in U\)
+	\\                           = \(x \in U \in X\) and \(x ni A\)  = \(x \in X\\A\)
+	\\ \(\overline{X -A} = X -\) Int\(A\)
+\end{enumerate}
+\section*{Problem 5}
+\subsection*{Question}
+Let \((X, \mathscr{T})\) be a topological space. Prove that for \(C \subseteq X, C\) is a closed subset if and only if \(C = \overline{C}\).
+\subsection*{Answer}
+\(\overline{C} = \bigcap\limits_{A \subseteq U \subseteq X \\ X - C \in \mathscr{T}} U \) by definition C is closed, and the intersection of closed sets is closed, therefore \(\overline{C}\) is closed.
+\\If \(C = \overline{C}\) then \(C\) is closed.
+\\ \\ If C is closed then \(C \in \bigcap\limits_{A \subseteq U \subseteq X \\ X - C \in \mathscr{T}} U\)
+\\ By set inclusion \(C\) is the minimal set thus \(C = \overline{C}\)
+\section*{Problem 6}
+\subsection*{Question}
+Let \((X, \mathscr{T})\) be a topological space and \(A \subseteq X\). Prove that \(A\) is discrete if and only if \(\mathscr{T}_{A,X}\) is discrete where \(\mathscr{T}_{A,X}\) is the subspace topology on \(A\)
+\subsection*{Answer}
+If \(\mathscr{T}_{A,X}\) is discrete then \(\mathscr{T}_{A,X}\) then A is necesarily discrete because it contains the intersection of all points that contain A in \(\mathscr{T}_{A,X}\) which is equal to the powerset of A
+If A is discrete then every point \(x \in A\) there is an open subset where \(U \cap A = \{x\}\).
+\\ This creates all subsets in \(A\) and it follows that since every subset in \(A\) is uniquely definited then the subspace topology which is the intersection of all these sets is the subset of all sets as well, and discrete.
+\section*{Problem 7}
+\subsection*{Question}
+Let \((X,\mathscr{T})\) be a topological space and \(A \subseteq X\). Prove that \(A\) is dense if and only if for each non-empty
+open subset \(U \in \mathscr{T}\) that \(A \cap U \neq \emptyset\). 
+\subsection*{Answer}
+Contrapositive:
+If A is not dense, \(\overline{A} \ne X\)
+\\Given  \(\overline{A} \ne X\) then \(X - \overline{A} \ne \emptyset\), which is \(\mathscr{T}\)-open. Therefore there exists some \(U \in A\) such that \(A \cap U \ne \emptyset\)
+\\If \(A \cap U = \emptyset\) then there exists a non-empty open set disjoint from A. 
+\\The complement of this open set is closed and contains A, but \(A \ne X\) so \(\overline{A} \ne X\)
+\section*{Problem 8}
+\subsection*{Question}
+Let \((X,\mathscr{T} )\) be a topological space such that \(U \subseteq X\) is an open dense subset and \(D \subseteq X\) is a dense subset. Prove that \(U \cap D\) is dense.
+\subsection*{Answer}
+Because \(U\) is open there exists all \(x \in U\) and \(x \in X\). Because \(U\) is dense then the closure of U is X.
+\\\(x \in \overline{D}\) because the closure of D is equal to X.
+\\\(x \in \overline{D} \cap \overline{U}\) therefore \(\overline{D} \cap \overline{U} = X\) and is dense
+\section*{Problem 9}
+\subsection*{Question}
+Let \(X, \mathscr{T}\) be a topological space. Prove that \(A \subseteq X\) is nowhere dense if and only if \(X - \overline{A}\) contains an open, dense subset of \(X\). Prove that if \(A_{1},A_{2}\) are nowhere dense subsets of \(X\), then \(A_{1} \cup A_{2}\) is a nowhere dense subset of \(X\).
+\subsection*{Answer}
+Given A is nowhere dense Int(closure of A) = \(\emptyset\)
+\\X\(\\Int(\overline{A}\) = X
+\(\overline{X\\\overline{X}}\) = X
+Therefore X - A is dense in X and contains a dense open subset
+\end{document}

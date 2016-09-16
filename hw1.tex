@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\begin{document}
+\title{MA 341: HW}
+\author{Jason Shipp} 
+\maketitle
+\section*{Problem 1}
+Let X be a set with \(A, B, C \subseteq X\)
+\subsection*{Questions}
+\begin{enumerate}[label=\alph*]
+\item Prove that A \(\cap\) B \(\subseteq\) A, A \(\cap\) B \(\subseteq\) B. Determine when \(A \cap\ B = A\)
+\item Prove that \(A \subseteq A \cup B\), and \(B \subseteq A \cup B\). Determine when \(A \cup B = A\)
+\item Prove that if \(A \subseteq B\) and \(B \subseteq C\), then \(A \subseteq C\)
+\item Prove that if \(C \subseteq A\) and \(C \subseteq B\), then \(C \subseteq A \cap B\)
+\item Prove that if \(A \subseteq C\) and \(B \subseteq C\), then \(A \cup B \subseteq C\)
+\end{enumerate}
+\subsection*{Answers}
+\begin{enumerate}[label=\alph*]
+\item For all \(a \in A \cap B, a \in A\) and \(a \in B\) by the definition of intersection \\ By definition of proper subset it immediately follows that \(A \cap B \subseteq A\) and \(A \cap B \subseteq B\) \\  \(A \cap B = A\) when \(A \subseteq B\) as all elements \(a \in A\) would also exist in B, which allows the definition of intersection to create A.
+\item By the definition of union all \(a \in A\) and \(b \in B\), \(a,b \in A \cup B\) \\ By definition of subset \(A, B \subseteq A \cup B\) as elements of both sets are included in the union. \\ \(A \cup B = A\) when \(B \subseteq A\) as no new elements in B would be added to A in the union.
+\item \(A \subseteq B\) implies for all \(a \in A\) \(a \in B\). \\ \(B \subseteq C\) implies for all \(b \in B\) \(b \in C\). \\ Finally this implies \(a \in A, B, C\) and \(A \subseteq B \subseteq C\) \(\rightarrow\) \(A \subseteq C\)
+\item For all \(c \in C, C \subseteq A\) implies \(c \in A\) \\ For all \(c \in C, C \subseteq B\) implies \(c \in B\) \\ All \(c \in C, c \in A, B\) which is the definition of \(A \cap B\). \\ Therefore \(C \subseteq A \cap B\)
+\item \(A \subseteq C \) implies for all \(a \in A, a \in C\) \\ \(B \subseteq C\) implies for all \(b \in B, b\in C\) \\ \(A \cup B = \{ a : a \in A\) and \(B\}\) which immediatley implies \(A \cup B \subseteq C\)
+\end{enumerate}
+\section*{Problem 2}
+Let \(X\) be a set and \(A \subseteq X\)
+\subsection*{Questions}
+\begin{enumerate}[label=\alph*]
+\item Prove that \(A \cap (X - A) = \emptyset \)
+\item Prove that \(A \cup (X - A) = X\)
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=\alph*]
+\item \(X - A = \{ x \in X : x \ni A \}\) \\ \(X\) and \(X - A\) are by definition disjoint and the intersection of disjoint sets is the empty set. \\ Therefore \(A \cap X-A = \emptyset\)
+\item Using \(X - A\) as defined above \\ \(A \cup X-A\) states the elements \(a \in A\) as well as the elements \(x \in X and x \ni A\). Combining the elements of A and the elements of X excluding only A trivially yields X. 
+\end{enumerate}
+\section*{Problem 3}
+\subsection*{Questions}
+\begin{enumerate}[label=\alph*]
+\item Prove that for any subset \(I \subseteq \mathscr{P}(X)\), we have
+\\ \hspace*{2cm} \(f(\bigcup\limits_{A \in I}A) = \bigcup\limits_{A \in I}f(A)\).
+\item Prove that for any subset \(I \subseteq \mathscr{P}(X)\), we have
+\\ \hspace*{2cm} \(f(\bigcap\limits_{A \in I}A) \subseteq \bigcap\limits_{A \in I}f(A)\).
+\item Prove that for any subset \(J \subseteq \mathscr{P}(Y)\), we have
+\\ \hspace*{2cm} \(f^{-1}(\bigcup\limits_{B \in J}B) = \bigcup\limits_{B \in J}f^{-1}(B).\)	
+\item Prove that for any subset \(J \subseteq \mathscr {P}(Y)\), we have
+\\ \hspace*{2cm} \(f^{-1}(\bigcap\limits_{B \in J}B) = \bigcap\limits_{B \in J}f^{-1}(B)\)
+\end{enumerate}
+\subsection*{Answers}
+\begin{enumerate}[label=\alph*]
+\item Must prove \(f(\bigcup\limits_{A \in I}A) \subseteq \bigcup\limits_{A \in I}f(A)\) and \(\bigcup\limits_{A \in I}f(A) \subseteq f(\bigcup\limits_{A \in I}A)\) \\ \(\exists x \in \bigcup\limits_{A \in I}A\) such that \(f(x) = y\) \\ \(\exists x \in A_i\) for some i such that \(f(x) = y\) \\ \(y \in f(A_i) \rightarrow f(A_i) \subseteq \bigcup\limits_{A \in I}A \) \\ Therefore \(f(\bigcup\limits_{A \in I}A) \subseteq \bigcup\limits_{A \in I}f(A)\)  \\ Let \(y \in \bigcup\limits_{A \in I}f(A)\) \(\rightarrow\) \(y \in f(A_i)\) for some \(A_i\) \\ \(\exists \in A_i\) such that \(f(x) = y \) \\ \(x \in \bigcup\limits_{A \in I}A\) \\ \(y \in f(\bigcup\limits_{A \in I}A)\) therefore \(\bigcup\limits_{A \in I}f(A) \subseteq f(\bigcup\limits_{A \in I}A)\) \\ \(f(\bigcup\limits_{A \in I}A) \subseteq \bigcup\limits_{A \in I}f(A)\) and \(\bigcup\limits_{A \in I}f(A) \subseteq f(\bigcup\limits_{A \in I}A)\) \(\rightarrow\) \(f(\bigcup\limits_{A \in I}A) = \bigcup\limits_{A \in I}f(A)\)
+\item Let \(y \in \bigcap f(A_{i})\). \(y \in f(A_{i})\) for all \(A_{i} \in I\).\\ \(\exists x \in A_{\i}\) for all \(A \in I \) such that \(y = f(x)\) 
+\\Therefore \(y \in f(\bigcap A_{i}) \rightarrow \bigcap F(A) \subseteq F(\bigcap A)\) 
+\item By definition of preimage, this proof follows exactly as A. \\
+Must prove \(f^{-1}(\bigcup\limits_{B \in J}B) \subseteq \bigcup\limits_{B \in J}f^{-1}(B)\) and \(\bigcup\limits_{B \in J}f^{-1}(B) \subseteq f^{-1}(\bigcup\limits_{B \in J}B)\) \\ \(\exists x \in \bigcup\limits_{B \in J}B\) such that \(f^{-1}(x) = y\) \\ \(\exists x \in B_i\) for some i such that \(f^{-1}(x) = y\) \\ \(y \in f^{-1}(B_i) \rightarrow f^{-1}(B_i) \subseteq \bigcup\limits_{B \in J}B \) \\ Therefore \(f^{-1}(\bigcup\limits_{B \in J}B) \subseteq \bigcup\limits_{B \in J}f^{-1}(B)\)  \\ Let \(y \in \bigcup\limits_{B \in J}f^{-1}(B)\) \(\rightarrow\) \(y \in f^{-1}(B_i)\) for some \(B_i\) \\ \(\exists \in B_i\) such that \(f^{-1}(x) = y \) \\ \(x \in \bigcup\limits_{B \in J}B\) \\ \(y \in f^{-1}(\bigcup\limits_{B \in J}B)\) therefore \(\bigcup\limits_{B \in J}f^{-1}(B) \subseteq f^{-1}(\bigcup\limits_{B \in J}B)\) \\ \(f^{-1}(\bigcup\limits_{B \in J}B) \subseteq \bigcup\limits_{B \in J}f^{-1}(B)\) and \(\bigcup\limits_{B \in J}f^{-1}(B) \subseteq f^{-1}(\bigcup\limits_{B \in J}B)\) \(\rightarrow\) \(f^{-1}(\bigcup\limits_{B \in J}B) = \bigcup\limits_{B \in J}f^{-1}(B)\)
+\item Let \(x \in f^{-1}(\bigcap A) \rightarrow f(x) \in \bigcap B\) \\ \(f(x) \in al B_{i}\) \\ \(x \in \) all \( f^{-1}(B_{i})\) \\ \(x \in \bigcap f^{-1}(B) \) \\ Therefore \(f^{-1}(\bigcap B) = \bigcap f^{-1}(B)\) 
+\end{enumerate}
+\section*{Problem 4}
+Let \(X, Y, Z\) be sets and \(f : X \mapsto Y, g: Y \mapsto Z\) be functions
+\subsection*{Questions}
+\begin{enumerate}[label=\alph*]
+\item Prove that if \(f, g\) are one-to-one, then \(g \circ f\) is one-to-one.
+\item Prove that if \(g \circ f\) is one-to-one then \(f\) is one-to-one. Give an example where \(g \circ f\) is one to one but \(g\) is not one-to-one.
+\item Prove that if \(f, g\) are onto, then \(g \circ f\) is onto.
+\item Prove that if \(g \circ f\) is onto, then \(g\) is onto. Give an example where \(g \circ f\) is onto but \(f\) is not onto.
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=\alph*]
+\item Let \(a,b \in X\). If \(f(a) = f(b)\) because \(f\) is injective \\ \(g(f(a)) = g(f(b))\) because \(g\) is injective. It then must be true that \(g \circ f\) is injective. 
+\item For \(x,y \in X\) let \(f(x) = g(y)\). \\ It follows that \(g(f(x)) = f(g(y))\). Thus \(x = y\) because \(g \circ f\) is injective \\ \\  For \(g\) is not one-to-one: Let X = \{1\}, Y = \{2,3\}, Z\{4\} \\ Let f(1) = 2, g(2) = 4, g(3) = 4.\\ Here the composition of \(g \circ f\) is injective, but g is not because g(2) = g(3) and  \(2 \ne 3\) 
+\item Assume \(g \circ f\) is not onto given \(f, g\) are onto. This would mean \(\exists b \in Z\) such that for all elements \(a \in X g(f(a))\ne b\) this contradicts the surjective quality of g, so \(g \circ f\) must be surjective. 
+\item Since \(g \circ f\) is surjective then for all \(c \in Z\) there exists an \(a \in X\) such that \(c = g(f(a))\). Then there exists some b such that \(b = f(a) \in B\) which satisfies \(g(b) = c\). Therefore g is onto. \\ \\ Let \(X = \{1\}, Y = \{1,2\}, Z = \{1\}\) \\ \(f(1) = 1, g(1) = 1, g(2) = 1.\) \\ \(g \circ f\) is surjective but \(f\) is not.   
+\end{enumerate}
+\section*{Problem 5}
+\subsection*{Question}
+Give an example of a function \(f: X \mapsto Y\) and subsets \(A, B \subseteq X\) such that \(f(A \cap B) \ne f(A) \cap f(B).\)
+\subsection*{Answer}
+\(A = \{0\}, B = \{1,...,n\}\), Let \(f(n) = 1\) \(f(A \cap B) = \emptyset \rightarrow \emptyset\), \(f(A) = \{1\}, f(B) = \{1\}\) \\ \(f(A) \cap f(B) = \{1\}\) \(\rightarrow\) \(f(A \cap B) \ne f(A) \cap f(B)\)
+
+\section*{Problem 6}
+\subsection*{Question}
+Let \(X\) be a set and let \(P_{1}, P_{2}\) be partitions of \(X\) such that \(P_{1}\) is a refinement of \(P_{2}\). Prove that for each \(A_{2} \in P_{2},\) the subset \(P_{1,A_{2}} = \{A_{1} \in P_{1} : A_{1} \subseteq A_{2}\}\) is a partition of \(A_{2}\).
+\subsection*{Answer}
+Let \(P_{2} = {A_{i}}\) such that \(A_{i} \subset A_{i}\) and \(A_{i} \cap A_{j} = \emptyset\) by definition of partition. \\
+Let \(P_{1,A_{i}}\) contain some \(B_{i} \subset A_{i} \cup A_{j}\) \\ \(B_{i} \cap B_{j} = \emptyset\) by definition of partition \\ \(x 'in \bigcup B_{i}\) \\ \(A_{j} \in \bigcup B_{i} =\) some set \(C\) \\ Since \(x \in A_{j}\)\\ Since \(P_{1}\) is a partition \(\exists B_{i} \in P_{1}\) such that \(x \in B_{i}\). If \(B_{i} \not\subset A_{i}, \exists A_{j}\) such that \(B_{i} \subset A_{j}, x \in B_{i} \subset A_{j}, x \in A_{j}\) Which contradicts the definition of partition. 
+\section*{Problem 7}
+\subsection*{Question}
+Given an integer \(d > 0\), prove that the sets \([j] = \{x \in \mathbb{Z} : d | x - j\}\) for \(j = 0, ..., d-1\) is a partition of \(\mathbb{Z}\). Describe the equivalence relation associated to this partition in terms of \(d\).
+\subsection*{Answer}
+By the euclidian algorithm \(x = dn + j\) such that \(d | x - j, n\) times. \\ By definition of partition all sets must be disjoint, which can easily be shown by substituting in values for j into the algorithm. \\ \(dn = (x - d-j)\) with \(j < d\). \((n+1)d = (x - j)\) which is a different subset of [j] thus the sets are disjoint. 
+\section*{Problem 8}
+\subsection*{Question}
+Let \(f: \mathbb{R} \to \mathbb{R}\) be a function and let \(x_{0} \in \mathbb{R}\). Prove that one of the subsets 
+\\ \hspace*{0.25cm} \(A_{f,+} = \{x \in \mathbb{R} : f(x) >x_{0}\}, A_{f.-} = \{x \in \mathbb{R} : f(x) < x_{0}\}, A_{f,0} = \{x \in \mathbb{R} : f(x) = x_{0}\}\) \\ must be infinite
+\subsection*{Answer}
+This can be shown, assuming I am understanding the problem correctly, for all but \(A_{f,0}\). the cardinality of the other two is trivially \(|\mathbb{R}| > x_{0}\) or \(\mathbb{R} < x_{0}\). because \(x_{0}\) is some real number it is non-infinite, so there lies an infitely large span of numbers greater and less than it. \\ Thus the subsets of \(\mathbb {R}\) are infinite.
+\end{document}
