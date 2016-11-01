@@ -1,0 +1,66 @@
+\documentclass{article}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand*\Heq{\ensuremath{\overset{\kern2pt H}{=}}}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{Algebra Notes}
+\author{Jason Shipp}
+\maketitle
+
+\section*{Chapter 1: Groups}
+
+\subsection*{MONOIDS}
+    Let S be a set, with mapping \(S x S \to S\)
+    an element of \(e \in S\) such that \(ex = x = xe\) for all
+    \(x \in S\) is called a unit element. When it is defined
+    for Addition e = 0, the zero element
+    A unit element is unique if for e` is a another unit
+    element, we have \(e = ee` = e`\) by assumption
+    in most cases e is just written as 1, but e is used
+    for more basic properties
+    \\
+    A monoid is a set G, with the law of composition
+    which is associative, and having a unit element
+    (therefore \(card(G) \ne 0\)).
+    \\  
+    Let G be a monoid, and x1, ..., xn elements of G
+    (where \(n \in Z+\backslash{1})\) \\
+    We define their product inductively: \\
+        \(\prod\limits_{v=1}^{n} x_{v}\)\\
+    We then have the following rule: \\
+        \(\prod\limits_{u=1}^{m}x_{u} * \prod^{n}x_{m+v} =
+        \prod\limits_{v=1}^{m+n}x_{v}\)\\
+    Which asserts that we can insert parentheses in any
+    manner in our product without changing the value
+    As a matter of convention when n = 0, the product
+    equals e.
+    \\
+    Under more general maps like \(S1 x S2 \to S3\) we need
+    more general ways to express associativity and 
+    commutativity for any setting in which they make 
+    sense. 
+    \\
+    Commutativity means \(f(x,y) = f(y,x)\), or \(xy = yx\)
+    If the composition for G is commutative we say that
+    G is abeilian.
+
+    Let G be a commutative monoid, and x1,...,xn elements
+    of G. let \(\psi\) be a bijection of the set of integers
+    (1,...,n) onto itself. Then:\\
+        \(\prod x_{\psi(v)} = \prod x_{v}\)\\
+    This essentially just means we can use the operation
+    on the elements of G in any order.
+
+    Let G be a commutative monoid, let I be a set, and
+    let \(f: I \to G\) be a mapping such that \(f(i) = e\) for
+    all but a finite number of \(i \in I\).
+    Let I0 be the subset of I consisting of those I
+    such that \(f(i) \ne e\). By\\
+        \(\prod f(i)\) we shall mean the product \\
+        \(\prod f(i)\) for \(i \in I_{0}\)\\
+    If G is written additively use \(\sum\) instead\\
+\end{document}
