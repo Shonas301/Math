@@ -2,7 +2,7 @@
 """
 Created on Mon Feb 08 17:10:11 2016
 
-@author: js338
+@author: Jason Shipp
 """
 import pickle, os
 from random import randint
