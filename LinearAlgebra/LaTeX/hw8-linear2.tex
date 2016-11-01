@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 35300: HW 8}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Answer}
+Given matrix A, the matrix B would be the matrix: \(\quad B = \begin{pmatrix}
+A_{12} & A_{11} \\
+A_{22} & A_{21} \end{pmatrix} \)
+\\ This means \(Det(B) = A_{12}A_{21} - A_{11}A_{22} = -1(A_{11}A_{22} - A_{12}A_{21}) = -1Det(A)\)
+\section*{Problem 2}
+\subsection*{Answer}
+If the two columns of A are equal, that means that \(A_{11} = A_{12}, A_{21} = A_{22}\)
+\\ This means their products \(A_{11}A_{22} = A_{12}A_{21} \rightarrow A_{11}A_{22} - A{12}A{21} = Det(A) = 0\)
+\section*{Problem 3}
+\subsection*{Answer}
+Given A above, \(\quad A^{t} = \begin{pmatrix}
+A_{11} & A_{21} \\
+A_{12} & A_{22} \end{pmatrix} \)
+\\ \(Det(A^{t}) = A_{11}A_{22} - A_{21}A_{12} = A_{11}A_{22} - A_{12}A_{21} = Det(A)\) by communativity of real numbers
+\section*{Problem 4}
+\subsection*{Answer}
+If A is an upper triangular matrix it takes the form, \(A = \begin{pmatrix} A_{11} & A_{12} \\ 0 & A_{22}\end{pmatrix}\)
+\\ The determinant of a matrix in such a form would be \(Det(A) = A_{11}A_{22} - A_{12}*0 = A_{11}A_{22}\) 
+\\ which is the product of the diagonal
+\section*{Problem 5}
+\subsection*{Answer}
+For this section let A be defined above and \(B = \begin{pmatrix} B_{11} & B_{12} \\ B_{21} & B{22} \end{pmatrix} \)
+\\ The product \(AB = \begin{pmatrix}
+A_{11}B_{11} + A_{12}B_{21} & A_{11}B_{12} + A_{12}B_{22} \\
+A_{21}B_{11} + A_{22}B_{21} & A_{22}B_{22} + A_{21}B_{12} \end{pmatrix}\)
+\\ \(Det(AB) = (A_{11}B_{11} + A_{12}B_{21})*(A_{22}B_{22} + A_{21}B_{12}) - (A_{11}B_{12} + A_{12}B_{22})*(A_{21}B_{11} + A_{22}B_{21})\)
+\\ \( = (A_{11}A_{22} - A_{12}A_{21})(B_{11}B_{22} - B_{12}B_{21}) = Det(A) * Det(B)\)
+\section*{Problem 6}
+\subsection*{Answer}
+a. \(CA = \begin{pmatrix} A_{11}A_{22} - A_{12}A_{21} & 0 \\ 0 & A_{11}A_{22}-A_{12}A_{21} \end{pmatrix}\)
+\\  \(AC = \begin{pmatrix} A_{11}A_{22} - A_{12}A_{21} & 0 \\ 0 & A_{11}A_{22}-A_{12}A_{21} \end{pmatrix}\)
+\\  Therefore CA = AC
+\\  \(Det(A) = A_{11}A_{22} - A_{12}A_{21}\), \(Det(A)*I = \begin{pmatrix} A_{11}A_{22} - A_{12}A_{21} & 0 \\ 0 * A_{11}A_{22}-A_{12}A_{21} \end{pmatrix}\)
+\\  Therefore \(CA = AC = Det(A)*I  \)
+\\ \\ b.\(det(C) = A_{22}A_{11} - -A_{12}-A_{21} = A_{22}A_{11} - A_{12}A_{21} = Det(A) \)
+\\ \\ c. \(A^{t} = \begin{pmatrix} A_{11} & A_{21} \\ A_{12} & A_{22} \end{pmatrix}\)
+\\ classical adjoint of \(A^{t} = \begin{pmatrix} A_{22} & - A_{21} \\ -A_{12} & A_{11} \end{pmatrix} \)
+\\ \(C^{t} = \begin{pmatrix} A_{22} & -A_{21} \\ -A_{12} & A_{11} \end{pmatrix}\)
+therefore the classical adjoint of \(A^{t}\) is \(C^{t}\)
+\\ d. Because A is invertible we can write \([det(A)]^{-1}CA = A[det(A)]^{-1}C = I \rightarrow A^{-1} = [det(A)]^{-1} C\)
+\section*{Problem 7}
+\subsection*{Answer}
+\(det(A) = \sum\limits_{i=1}^{n+1}(-1)^{1+j}A_{1j}det([A]_{1j})\)
+\\where \([A]_{1j}\) is the matrix with \(j \ne 1\) and rank less than n + 1, which has det(0)
+\\\([A]_{11}\) however with \(det([A]_{11}) = \prod\limits_{i=2}^{n+1}A_{ii}\)
+\\So the statement above can be rewritte \(det(A) = A_{11}det([A]_{11}) = \prod\limits_{i=1}^{n+1}A_{ii}\)
+\\Which is the product along the diagnol
+\section*{Problem 8}
+\subsection*{Answer}
+Use theorem 4.3 and apply it to each row such that \\
+\(det(ka_{1},ka_{2},...,ka_{n}^{t} = kdet(a1, ka_{2},...,ka_{n})^{t} = .. = k^{n} (a_{1},a_{2},...,a_{n})\)
+\section*{Problem 9}
+\subsection*{Answer}
+If A has two identical columns one of the columns can be set to 0, and therefore the rank of the matrix is one less than it should be.
+\\If rank is not max for the matrix then det(A) = 0
+\end{document}
