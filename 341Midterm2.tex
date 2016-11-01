@@ -1,0 +1,184 @@
+\documentclass{article}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand*\Heq{\ensuremath{\overset{\kern2pt H}{=}}}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 34100: Midterm 2}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Problem}
+\begin{enumerate}[label=(\alph*)]
+	\item For a function \(f: (X, \mathcal{T}_{x}) \rightarrow (Y, \mathcal{T}_{y})\) to be continuous at \(x_{0} \in X\)
+	\item For a function \(f: (a,b) \rightarrow \mathbb{R}\) to be differentiable at \(x_{0}\)
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph*)]
+	\item Given topological spaces \((X, \mathcal{T}_{x}), (Y, \mathcal{T}_{y})\), we say that a function \(f:X \rightarrow Y\) is
+	         continuous at \(x \in X\) if for each open neighborhood \(V \subseteq Y\) there exists an open neighborhood 
+                    \(U \subseteq X\) of x such that \(f(U) \subset V\).
+	\item Given a function \(f:U \rightarrow \mathbb{R}\) where \(U \subseteq \mathbb{R}\) is an open subset, we say that the
+	         function f is differentiable at \(x \in X\) if the limit: \\
+	         \tab[1cm] \(\quad \lim\limits_{t \to 0} \frac{f(x + t) - f(x)}{t}\) \\
+	         exists.
+\end{enumerate}
+\section*{Problem 2}
+\subsection*{Problem}
+\begin{enumerate}[label=(\alph*)]
+	\item If \(f: [a,b] \to \mathbb{R}\) is differentiable on \((a,b)\), then \(f\) is continuous on \((a,b)\)
+	\item If \(f: \mathbb{R} \to \mathbb{R}\) is continuous and \(A \subset \mathbb{R}\) is connected, then \(f^{-1}(A)\) is connected
+	\item If \(f:[a,b] \to \mathbb{R}\) is a function and \(f^{2}\) is differentiable, then \(f\) is differentiable.
+	\item If \(f: \mathbb{R} \to \mathbb{R}\) is continuous at \(C \subset \mathbb{R}\) is compact, then \(f(C)\) is compact.
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph*)]
+	\item True
+	\item False
+	\item False
+	\item True
+\end{enumerate}
+\section*{Problem 3}
+\subsection*{Problem}
+\begin{enumerate}[label=(\alph*)]
+	\item \tab \(\lim\limits_{x\to \infty}(1 + \frac{3}{x})^{x}\)
+	\item \tab \(\lim\limits_{x \to 0}(\frac{3x + sin(x)}{2x})\)
+	\item \tab \(\lim\limits_{x \to \infty}(\frac{4x}{4x+1})^{4x-2}(\frac{4x\sqrt{2}}{4x-3})\)
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph*)]
+	\item \tab Let \(m = \frac{x}{3}\) and substitute it for x.\\
+	         \tab This makes the limit \(\lim\limits_{x \to \infty}(1 + \frac{1}{m})^{3m}\) \\
+	         \tab By the notes the limit \(\lim\limits_{x \to \infty}(1+ \frac{1}{m})^{m} = e\) \\
+	         \tab Therefore the limit here is \(e^{3}\)
+	\item 
+	Using Algebra \\
+	         \tab \(\frac{3x + sin(x)}{2x}\) = \(\frac{3x}{2x} + \frac{sin(x)}{2x}\) \\
+	Using Lemma 4.3 \\
+	        \tab = \(\lim\limits_{x \to 0}(\frac{3}{2}) + \frac{1}{2}\lim\limits_{x \to 0}(\frac{sin(x)}{x})\)
+	        \tab = \(\frac{3}{2} + \frac{1}{2} * 1 = 2\) by the class hw for \(\frac{sin(x)}{x}\)
+	\item
+	Using Algebra \\
+		\tab    \((\frac{4x}{4x+1})^{4x-2}(\frac{4x\sqrt{2}}{4x-3})\) = 
+			\(\frac{(\frac{4x}{4x+1})^{4x}}{(\frac{4x}{4x+1})^{-2}}\)\((\frac{4x\sqrt{2}}{4x-3})\) \\
+	Using Lemma 4.2, We can apply the limit to each product/quotient independently then reassemble. \\
+		\tab 	 Massaging the numerator \((\frac{4x}{4x+1})^{4x}\) = \((1 + \frac{1}{4x})^{-4x}\) \\
+		\tab 	Substitute \(m = \frac{x}{4}\) and we get = \(\lim\limits_{x \to \infty}(1 + \frac{1}{m})^{-m}\) which by
+		           the class homework = \(e^{-1}\) \\
+		\tab 	The denominator \(\lim\limits_{x\to \infty}(\frac{4x}{4x+1})^{-2}\) is in indeterminant form so
+			 L'Hopitals can be applied to the inside \\
+		\tab 	\(\lim\limits_{x\to \infty}(\frac{4x}{4x+1})^{-2} \Heq \lim\limits_{x\to \infty} (\frac{4}{4}) = 1\), \(1 ^{-2} = 1\) 
+\\		\tab 	The second product is also in indeterminant form so L'Hopitals can be applied again. \\
+		\tab 	\(\lim\limits_{x \to \infty}(\frac{4x\sqrt{2}}{4x-3}) \Heq \lim\limits_{x \to \infty}(\frac{4\sqrt{2}}{4})
+			 = \sqrt{2}\)\\
+	Combining them all we get: \\
+	\(\lim\limits_{x \to \infty}(\frac{4x}{4x+1})^{4x-2}(\frac{4x\sqrt{2}}{4x-3})\) = \(\frac{e^{-1}}{1}\sqrt{2} 
+	= \frac{\sqrt{2}}{e}\)
+\end{enumerate}	
+\clearpage
+\section*{Problem 4}
+Let \(f: \mathbb{R} \to \mathbb{R}\) be given by \(f(x) = x^{4} + 7x^{3} - 9\).
+\subsection*{Problem}
+\begin{enumerate}[label=(\alph*)]
+	\item Prove that \(f\) is continuous using the definition of continuity.
+	\item Prove that there exists \(x_{0},x_{x1} \in \mathbb{R}\) with \(x_{0} \ne x_{1}\) such that \(f(x_{0}) = f(x_{1}) = 0\)
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Too lazy to write out, all polynomials are continuous by the homework
+	\item
+		Using the intermediate value theorem, I will show the existance of two unique zeroes to the function \(f\) \\
+		\(f(0) = -9\) \\ \(f(2) = 63\), therefore there exists an \(x_{0} \in (0,2) = s_{1}\) where \(f(x_{0}) = 0\) \\
+		\(f(-1) = -15\) \\ \(f(-8) = 503\), therefore there exists an \(x_{1} \in (-1,-8) = s_{2}\) where \(f(x_{1}) = 0\) \\
+		Because \(s_{1} \cap s_{2} = \emptyset\) \(x_{0} \ne x_{0}\), so the proposition above holds.
+\end{enumerate}
+\section*{Problem 5}
+\subsection*{Problem}
+\begin{enumerate}[label=(\alph*)]
+	\item 	Let \(f : (0, \infty) \to \mathbb{R}\) be differentiable and that \(\lim_{x \to \infty}f(x) + f'(x) = L\). Prove that 
+		\(\lim_{x \to \infty}f(x) = L\) and \(\lim_{x \to \infty}f'(x) = 0\)
+	\item 	Let \(a_{1}, ..., a_{n} \in \mathbb{R}\) and define \\
+	\tab[2cm] \tab[2cm] \(f(x) = \sum\limits_{i=1}^{n}(a_{i} - x)^2\)\\
+		Prove that \(f\) has a unique absolute minimum point \(x_{0}\) and find \(x_{0}\) 
+	\item 	Let \(a > b > 0\) and \(n \in \mathbb{N}\) with \( n \ge 2\). Prove that \\	
+	\tab[2cm] \tab[2cm] \(a^{1/n} - b^{1/n} < (a - b)^{1/n}\)
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Assume \(\lim_{x\to\infty} = L\) \\
+		This means \(\lim\limits_{x\to\infty}\frac{L}{x} = 0\) \\
+		But if we replace \(\lim\limits_{x\to\infty}\frac{f(x)}{x} \) we have an indeterminant form so we can apply
+		L'Hopitals \\
+		\(\Heq \lim\limits_{x\to\infty}f'(x)\)\\
+		Therefore \(\lim\limits_{x\to\infty}f'(x) = 0\)
+	\item
+		\(\sum\limits_{i=1}^{n}(a_{i} - x)^{2} = \sum\limits_{i=1}^{n}(a_{i}^{2}-2a_{i}x + x^{2})\) \\
+		\(\sum\limits_{i=1}^{n}(a_{i}^{2}) - \sum\limits_{i=1}^{n}2a_{i}x + \sum\limits_{i=1}^{n}x^{2}\)
+		Taking the derivative and setting it equal to zero
+		\(f'(x) = 0 - \sum\limits_{i=1}^{n}2a_{i} - 2nx \) \\
+		\\\(x = \frac{\sum\limits_{i=1}^{n}2a_{i}}{2n} = \frac{1}{n} \sum\limits_{i=1}^{n}a_{i}\)
+	\item
+		Use a substitution \(c = (\frac{a}{b})^{1/n}\) \\
+		Because of the definition of a and b, \(c \in (0, 1)\)\\
+		Subbing c into the equation we get: \\
+\tab[2cm]	\(x^{n} * (x^{1/n} - y^{1/n}) = (x - y)^{1/n} * x*{n}\) \\
+		\( = 1 - c < (1 - c^{n})\)\\
+		\((1- c)^{n} < (1-c)\) \\
+		This is necessarily true because \(c < 1\).
+\end{enumerate}
+\section*{Problem 6}
+\subsection*{Problem}
+\begin{enumerate}[label=(\alph*)]
+	\item 	Let \(f: [0,1] \to \mathbb{R}\) be a continuous function that \(f(0) = f(1)\). Prove that there exists \(c \in [0, 1/2]\)
+		such that \(f(c) = f(c + 1/2)\) 
+	\item 	Let \(f: [0,1] \to \mathbb{R}\) be such that for each \(\alpha ]in \mathbb{R}\) that \(|f^{-1}(\alpha)| = 0\) or 2.
+		 Prove that \(f\) cannot be continuous at every \(x\in [0,1]\).
+	\item 	Let \(f,g: [a,b] \to \mathbb{R}\) be continuous at \(x_{0} \in (a,b)\). Using the definition of continuity, prove that 
+		\(fg\) is continuous at \(x_{0}\) 	
+	
+\end{enumerate}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph*)]
+	\item
+		Define some function \(g = f(x) -f(x + 1/2)\) \\
+		Because \(f(0) = f(1)\) we can solve:\\
+		 \(g(0) = f(0) - f(1/2)\) and \(g(1/2) = f(1/2) - f(1)\). \\
+		to \(g(0) = -g(1/2)\) \\
+		We can then describe 3 cases for g: \\
+		\begin{enumerate}
+		\item
+			\(g(0) > 0 > g(1/2)\): Because of the intermediate value theorem, we know there exists some value \(c\) such
+			that \(g(c) = 0 \to f(c) = f(c + 1/2)\)
+		\item 
+			\(g(0) < 0 < g(1/2)\): Again using the intermediate value theorem, \(\exists c \in (0,1/2)\) s.t. \(g(c) = 0\) 
+			which again implies \(f(c) = f(c + 1/2)\)
+		\item 
+			The final case is \(g(0) = 0 = g(1/2)\) which is a trivial answer to the problem.
+		\end{enumerate}
+	\item
+		Pre-image of \(|f^{-1}(\alpha)|\) aside, the function f cannot be a continuous function into R based upon the definition
+		of it's domain. \\\\
+		Assume \(f\) is continuous. Because [0,1] is a compact subset we can apply the Extreme Value Theorem. \\
+		This states there is some \(x_{min},x_{max} \in [0,1]\) such that \(f(x_{min}) \le f(x) \le f(x_{max})\) for all 
+		\(x\in \mathbb{R}\). \\
+		Ths is untrue in \(\mathbb{R}\) by the definition of \(\mathbb{R}\) as the unbounded set \((-\infty,\infty)\) \\
+		Therefore \(f\) is non-continuous.
+	\item
+		For \(x\in  X\), it suffices to prove that for each \(B(f(x)g(x),r) \subseteq \mathbb{R}^{n}\), there exists an open
+		neighborhood \(U \subseteq X\) of x such that \((f g)(U) \subseteq B(f(x)g(x),r)\). For simplicity, we will assume
+		that \(r < 1\) and let \(M_{f} = | f(x)| + 1, M_{g} = |g(x)| + 1\). Since f is continuous, there exists an open neighborhood 
+		\(U_{f,1} \subseteq X of x such that f(U) \subseteq B(f(x),1)\). As f,g are continuous, there exist open neighborhoods 
+		\(U_{f,2},Ug of x such that f(U_{f}) \subseteq B(f(x),r/2M_{g})\) and \(g(U_{g}) \subseteq B(g(x),r/2M_{f})\). 
+		Let \(U_{f} = U_{f,1} \cap U_{f,2}\) and note that \(|f(x'|)| ≤ M_{f}\) for every \(x' \in U_{f}\). 
+		Now, for all \(x_{0} \in U = U_{f} \cap U_{g}\) we have: \\\\
+		\tab[2cm] \(d(f(x),g(x), f(x')g(x'))) \le d(f(x)g(x), f(x')g(x)) + d(f(x')g(x), f(x')g(x'))\)\\
+		\tab[6cm] \( = |g(x)|d(f(x),f(x')) + |f(x')|d(g(x),g(x'))\)\\
+		\tab[6cm] \( < |g(x)| \frac{r}{2M_{g}} + |f(x')|\frac{r}{2M_{f}}\) \\
+		\tab[6cm] \( < r/2 + r/2 = r\)
+\end{enumerate}
+\end{document}

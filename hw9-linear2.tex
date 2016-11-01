@@ -1,0 +1,82 @@
+\documentclass{article}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 35300: HW 9}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Problem}
+Let the rows of \(A \in M_{n x n}(F)\) be \(a_{1},a_{2},...,a_{n}\), and let \(B\) be the matrix in which the rows 
+\\ are \(a_{n},a_{n-1},...,a_{1}\). Calculate det\((B)\) in terms of det\((A)\).
+\subsection*{Answer}
+The matrix B is formed by independent row changes where \(a_{n}\) swaps with \(a_{1}\), \(a_{n-1}\) swaps with \(a_{2}\), etc...
+\\ These swaps occur \(\frac{n}{2}\) Times, and by Theorem 4.5 introduce a multiplication of -1 each time
+\\ Therefore \(det(B) = (-1)^{\frac{n}{2}} det(A)\)
+\section*{Problem 2}
+\subsection*{Problem}
+Use Cramer's Rule to solve the given system of linear equations:
+\\ \tab[2cm] \(a_{11}x_{1} + a_{12}x_{2} = b_{1}\)
+\\ \tab[2cm] \tab[2cm] \tab[2cm] where \(a_{11}a_{22} - a_{12}a_{21} \ne 0\)
+\\ \tab[2cm] \(a_{21}x_{1} + a_{22}x_{2} = b_{2}\)
+\subsection*{Answer}
+Let \(\quad A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}\)
+\\ Using Cramer's Rule, namely \(x_{k} = \frac{det(M_{k})}{det(A)}\) we can form the linear equation:
+\\ \(x_{1} =\frac{\quad det\begin{pmatrix} b_{1} & a_{12} \\ b_{2} & a_{22}\end{pmatrix}}{\quad det(A)} = \frac{b_{1}a_{22} 
+- a_{12}b_{2}}{a_{11}a_{22}-a_{12}a_{21}}\),
+\\
+\\ \(x_{2} =\frac{\quad det\begin{pmatrix} a_{11} & b_{1} \\ a_{21} & b_{2}\end{pmatrix}}{\quad det(A)} = \frac{b_{1}a_{11} 
+- a_{21}b_{2}}{a_{11}a_{22}-a_{12}a_{21}}\).
+\\\\\\\\\\\\
+\section*{Problem 3}
+\subsection*{Problem}
+Use Theorem 4.8 to prove a result analogous to Theorem 4.3 (page 212), but for columns:
+\\ \begin{enumerate}[label=(\alph{*})]
+	\item The determinant of an \(n\) x \(n\) matrix is a linear function of each column when the remaining columns are held fixed
+	\item If \(A \in M_{nxn}(F)\) has a column cosisting entirely of zeroes, then det(A) = 0.
+\end{enumerate}
+\subsection*{Answer}
+Theorem 4.8: det(\(A^{t}\)) = det(A)
+\\ Theorem 4.3: The determinant of an \(n\) x \(n\) matrix is a linear function of each row when the remaining rows are held fixed. That is, for \(1 \le r \le n\), we have 
+\\ \tab[2cm] det\(\begin{pmatrix}a_{1}\\ \vdots \\a_{r-1} \\u + kv \\a_{r+1} \\ \vdots \\a_{n} \end{pmatrix}\) =
+	det\(\begin{pmatrix}a_{1}\\ \vdots \\a_{r-1} \\u \\a_{r+1} \\ \vdots \\a_{n} \end{pmatrix}\) +
+	\( k\) det\(\begin{pmatrix}a_{1}\\ \vdots \\a_{r-1} \\v \\a_{r+1} \\ \vdots \\a_{n} \end{pmatrix}\)
+\\ \begin{enumerate}[label=(\alph{*})]
+\item The detirminant of an \(n\) x \(n\) matrix is a linear function of each column when the remaning columns are held fixed.
+\\	When you take \(A^{t}\) the columns of A become the rows of of \(A^{t}\).
+\\	Because of Theorem 4.8, Theorem 4.3 can be applied again towards \(A^{t}\) which makes the above statement true.
+\item If \(A \in M_{nxn}(F)\) has a column consisting entirely of zeroes, then det(A) = 0
+	\\A column of zeroes in A means a row of zeroes in \(A^{t}\)
+	\\Theorem 4.4 states if a matrix, \(A^{t}\), has a row of zeroes det(A) = 0
+	\\By Theorem 4.8: det(\(A^{t}\)) = det(A) = 0
+\end{enumerate}
+\section*{Problem 4}
+\subsection*{Problem}
+Prove that an upper triangular \(n\) x \(n\) matrix is invertible if and only if all of its diagonal entries are nonzero.
+\subsection*{Answer}
+By the proof on the final page of Monday's notes. The determinant of a matrix is equal to the product of the entries along the diagonal
+\\ That is: det(A) = \(\prod\limits_{k=1}^{n} a_{kk}\) where \(a_{kk} \in A\)
+\\ If one of the entries \(a_{kk}\) for \(1 \le k \le n\) is 0, then the det(A) = 0
+\\ Therefore A is only invertible if the diagonal entries are nonzero.
+\\ For the only if portion, if none of the entries along the diagonal are zero then the determinant is nonzero
+\\ So A is invertible.
+\section*{Problem 5}
+\subsection*{Problem}
+Let \(\beta = \{u_{1},u_{2},...,u_{n}\}\) be a subset of \(F^{n}\) consisting of n distinct vectors, and let \(B\) be the matrix in \(M_{nxn}(F)\) having \(u_{j}\) as colum \(j\). Prove that \(\beta\) is a basis for \(F^{n}\) if and only if det(B) \(\ne\) 0.
+\subsection*{Answer}
+If the set \(\beta\) is a basis then \(\beta\) is an indenpendent set of size n.
+\\This is the same as the set of columns of \(B\) being independent
+\\If the columns are independent then the rank(B) = n
+\\rank(B) = n if and only if det(B) \(\ne\) 0.
+\\Therefore \(\beta\) is a basis for \(F^{n}\) if and only if det(B) \(\ne\) 0
+\section*{Problem 6}
+\subsection*{Problem}
+Prove that if \(A,B \in M_{nxn}(F)\) are similar, then \(det(A) = det(B)\). 
+\subsection*{Answer}
+\(B = Q^{-1}AQ\)
+\\\(det(B) = det(Q^{-1}AQ)=det(Q^{-1})det(A)det(Q) = det(Q)^{-1}det(A)det(Q) = det(A)\)
+\end{document}
