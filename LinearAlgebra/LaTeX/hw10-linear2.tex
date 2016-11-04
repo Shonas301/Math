@@ -1,0 +1,68 @@
+\documentclass{article}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 35300: HW 9}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph{*})]
+  \item
+    If \(A\) is similar to \(\lambda I_{n}\), then there exists \(Q_{-1} and Q\) such that\\
+    \(A = Q^{-1}\lambda I_{n}Q\) \\
+    \(  = \lambda Q^{-1}I_{n}Q\) \\
+    \(  = \lambda Q^{-1}Q\) \\
+    \(  = \lambda I_{n}\) \(\square\)
+  \item
+    Let \(A\) be some diagonal matrix with elements along the diagonal \(a_{1},\dots,a_{n}\) with the rest of the elemnts being zero \\
+    Then the characteristic polynomial of \(A, p(\lambda) = det(A - \lambda I_{n}) = (a_{1} - \lambda)...(a_{n} - \lambda)\)\\
+    Which means that for the diagonal matrix the eigen values are the values \(a_{1},\dots,a_{n}\) \\
+    This means the matrix having only one eigen value is the matrix whose diagonal is \(\lambda,\dots,\lambda\) or \\
+    \(\lambda * I_{n}\) \(\square\)
+  \item
+    \(A - \lambda I_{n}\) = \(\quad \begin{pmatrix} 1-\lambda & 1 \\ 0 & 1 - \lambda \end{pmatrix}\) \\
+    \(p_{A}(\lambda) = det(A-\lambda I_{n}) = (1-y)(1-y)\) \\
+    Therefore the only eigen value of A is 1 \\
+    The nullity of \(A - 1 * I_{2} = \quad \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}\) is one.\\
+    Therefore we cannot find a set of 2 independent eigenvectors for a, which means A cannot be diagonizable. \(\square\)
+\end{enumerate}    
+\section*{Problem 2}
+\subsection*{Answer}
+\begin{enumerate}[label=(\alph{*})]
+  \item
+    If A is similar to B then there exists \(Q^{-1} and Q\) such that\\
+    \(A = Q^{-1}BQ\) \\
+    \(p_{A}(\lambda) = det(A - \lambda I_{n}\) \\
+    \(p_{B}(\lambda) = det(B - \lambda I_{n}\) \\
+    \( = det(B - \lambda I_{n})\)\(det(I_{n}) = det(B - \lambda I_{n})(QQ^{-1})\) \\
+    \( = det((B - \lambda I_{n})(QQ^{-1}) = det(Q^{-1}(B-\lambda I_{n})Q)\) \\
+    \( = det(Q^{-1}BQ - \lambda I_{n})\) \\
+    \( = det(A - \lambda I_{n})\) \\
+    \( = p_{A}(\lambda) \) \\
+    Therefore similar matrices have the same characteristic polynomial. \(\square\)
+  \item
+    Let Q be the matrix which takes \(\beta \to \beta'\) \\
+    Let B be the matrix representation of one of the matrixes in T\\
+    By it's construction \(A = Q^{-1}BQ\) \\
+    Therefor A is similar to B and by part a: \\
+    \(p_{A}(\lambda) = p_{B}(\lambda)\) independent  of choice of vbases \(\square\)
+\end{enumerate}
+\section*{Problem 3}
+\subsection*{Answer}
+  \(p_{A}(\lambda) = det(A - \lambda I_{n})\)\\
+  \( = det(A - \lambda I_{n})^{t}\)\\
+  \( = det((A - \lambda I_{n})^{t})\)\\
+  \( = det(A^{t} - \lambda I_{n})\) \\
+  \( = p_{A^{t}}(\lambda)\)
+\section*{Problem 4}
+\subsection*{Answer}
+Because B is invertible we can say that \(A + cB = (B^{-1}A + cI_{n})B\)\\
+\(det(A + cB) = det(B^{-1}A + cI_{n})det(B)\) \\
+This means the determinant is a polynomial of c which has some countable number of zeroes \\
+Therefore we can always get some value \(c \in \mathbb{C}\) such that the determinant is nonzero and \(A + cB\) is not invertible\\
+\end{document}
