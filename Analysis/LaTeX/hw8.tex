@@ -1,0 +1,148 @@
+\documentclass{article}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\newcommand*\Heq{\ensuremath{\overset{\kern2pt H}{=}}}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 34100: Midterm 2}
+\author{Jason Shipp}
+\maketitle
+
+\section{}
+
+\subsection*{Problem}
+Let \(f:[a,b] \to \mathbb{R}\) be a constant function \(f(x) = x_{x}\) Using the definition of Reimann integrable to prove that f is integrable on 
+\([a,b]\) \(\int^{b}_{a}f = x_{0}(b-a)\).
+
+\subsection*{Answer}
+Because \(f\) is constant to some value \(\alpha \in \mathbb{R}\) we know
+that \(U(f, [a,b],\mathcal{P}) \leq M(f)(b-a)\) where \(M(f) = \alpha\)
+and \(L(f, [a,b], \mathcal{P}) \geq m(f)(b-a)\) where \(m(f) = \alpha\)
+therefore \(U(f, [a,b],\mathcal{P}) = L(f, [a,b],\mathcal{P})\) by lemma 3.5
+which means \(\int^{-}_{[a,b]} = \int^{+}_{[a,b]}\) and f is integrable. \\
+Furthermore because of the inequality above we know that \(M(f) = \alpha = 
+supL(f, [a,b], \mathcal{P}\) and by the definition of Riemann integrable
+\(\int_{a}^{b} f = \alpha(b-a)\) \tab \(\square\)
+
+
+\section{}
+
+\subsection*{Problem}
+Let \(f:[a,b] \to \mathbb{R}\) be Riemann integrable. for \(\alpha \in 
+\mathbb{R}\), define \(g(x) = f(x-\alpha)\). Prove that \(g\) is Riemman
+intergrable on \(a + \alpha, b + \alpha]\) and \(\int^{b+\alpha}_{a+alpha}g = \int^{b}_{a}f.\)
+
+\subsection*{Answer}
+\(\int^{b+\alpha}_{a + \alpha}g(x) = \int^{b+\alpha}_{a + \alpha}f(x-\alpha)
+= F(b + \alpha - \alpha) - F(a + \alpha - \alpha) = F(b) - F(a) = 
+\int^{b}_{a}f\) \tab \(\square\)
+
+
+\section{}
+
+\subsection*{Problem}
+Let \(f: [-a,a] \to \mathbb{R}\) be an integrable funtion. Prove that if 
+\(f\) is an even function (i.e \(f(-x) = f(x)\) for all \(x\)) then 
+\(\int^{a}_{-a} = 2\int^{a}_{0}f.\)
+
+\subsection*{Answer}
+\(\int^{a}_{-a}f = \int^{0}_{-a}f + \int^{a}_{0}f\) \\
+\(\int^{0}_{-a}f = F(0) - F(-a) = -(F(-a) - F(0)) = -\int^{-a}_{0}f\)\\
+\(\int^{0}_{-a}f = \int^{a}_{0}f(-x)\), by substitution \\
+\(\int^{0}_{-a}f = \int^{a}_{0}f\) therefor \\
+\(\int^{a}_{-a}f = 2\int^{a}_{0}f\) \tab \(\square\)
+
+
+\section{}
+
+\subsection*{Problem}
+Let \(f:[-a,a] \to \mathbb{R}\) be an integrable function. Prove that if 
+\(f\) is an odd function (i.e \(f(-x) = -f(x)\) for all of \(x\)) then 
+\(\int^{a}_{-a}f = 0.\)
+
+\subsection*{Answer}
+\(\int^{a}_{-a}f = \int^{0}_{-a}f + \int^{a}_{0}f\) \\
+\(\int^{0}_{-a}f = -\int^{-a}_{0}f\) \\
+\(\int^{0}_{-a}f = \int^{a}_{0}f(-x)\) \\
+\(\int^{0}_{-a}f = -\int^{a}_{0}f\) \\
+\(\int^{a}_{-a}f = -\int^{a}_{0}f + \int^{a}_{0}f\) 
+\(\int^{a}_{-a}f = 0\) \tab \(\square\)
+
+\section{}
+
+\subsection*{Problem}
+Prove that if \(f:[a,b] \to \mathbb{R}\) is Riemann integrable and
+\(a = x_{0} < x_{1} < x_{2} < \dots < x_{n} < x_{n+1} = b\), then \\
+\tab[4cm] \(\int_{a}^{b}f = \sum\limits^{n}_{i=0}\int^{x_{i+1}}_{x_{i}}f\).
+
+\subsection*{Answer}
+\(\int_{a}^{b}f = \sum\limits^{n}_{i=0}\int^{x_{i+1}}_{x_{i}}f\) \\
+\(\int_{a}^{b}f = \sum\limits^{n}_{i=0}(F(x_{i+1}) - F(x_{i}))\) \\
+\(\int_{a}^{b}f = (F(x_{1}) - F(x_{0})) + (F(x_{2}) - F(x_{1})) + \dots +
+(F(x_{n}) - F(x_{n-1})) + (F(x_{n+1}) - F(x_{n})) \) \\
+\(\int_{a}^{b}f = F(x_{n+1}) - F(x_{0}) = F(b) - F(a) = \int_{a}^{b}f\)
+\tab \(\square\)
+
+\section{}
+
+\subsection*{Problem}
+Prove that if \(f, g: [a,b] \to \mathbb{R}\) are Reiemann integrable, then 
+\(f+g\) is a Riemann ingegrable and \\
+\tab[4cm] \(\int^{b}_{a}(f+g) = \int^{b}_{a}f + \int^{b}_{a}g\).
+
+\subsection*{Answer}
+\(U(f+g, [a,b], \mathcal{P}) = \sum\limits^{n}_{i=0} sup(f + g) 
+\delta(I_{i})\) \\
+\(U(f+g, [a,b], \mathcal{P}) \leq \sum sup(f)\delta(I_{i}) + \sum sup(g)
+\delta(I_{i})\) \\
+\(U(f+g, [a,b], \mathcal{P}) \leq U(f, [a,b], \mathcal{P}) + 
+U(g, [a,b], \mathcal{P})\) \\
+By the definition of the upper sum there exists the partion p such that \\
+\(U(f, [a,b], \mathcal{P}) < \int_{[a,b]}^{+}f + \epsilon/2\) and
+\(U(g, [a,b], \mathcal{P}) < \int_{[a,b]}^{+}g + \epsilon/2\) for \(\epsilon > 0\)\\
+\(\int_{[a,b]}^{+}f+g \leq U(f+g, [a,b], \mathcal{P}) \leq +
+\leq U(f, [a,b], \mathcal{P}) + U(g, [a,b], \mathcal{P}) \leq +
+\int_{[a,b]}^{+}f + \int_{[a,b]}^{+}g + \epsilon\) \\
+Therefore \(\int_{[a,b]}^{+}f+g \leq 
+\int_{[a,b]}^{+}f + \int_{[a,b]}^{+}g + \epsilon\) \\
+Following the same logic, which is difficult to type out on latex \\
+\(\int_{[a,b]}^{-}f+g \geq \int_{[a,b]}^{-}f + \int_{[a,b]}^{-}g -
+\epsilon\) \\
+\(\int_{[a,b]}^{-}f+g \geq \int_{[a,b]}^{-}f + \int_{[a,b]}^{-}g\) \\
+By definition of f and g as integrable we know:\\
+\(\int_{[a,b]}^{-}f + \int_{[a,b]}^{-}g = \int_{[a,b]}^{+}f + 
+\int_{[a,b]}^{+}g\) \\
+And with our previous inequalities above we can rearrange: \\
+\(\int_{[a,b]}^{+}f+g \leq \int_{[a,b]}^{+}f + \int_{[a,b]}^{+}g =
+\int_{[a,b]}^{-}f + \int_{[a,b]}^{-}g \leq \int_{[a,b]}^{-}f+g\) \\
+Which implies \(\int_{[a,b]}^{+}f+g \leq \int_{[a,b]}^{-}f+g\) and
+\(\int_{[a,b]}^{-}f+g \leq \int_{[a,b]}^{+}f+g\) by definition so the 
+original presented integral is indeed integrable and it is equal to 
+\(\int_{a}^{b}f + \int_{a}^{b}g\) because the inequality above is equal throught due to abritrary choice of \(\epsilon\)
+
+
+
+\section{}
+
+\subsection*{Problem}
+Prove that if \(f:[a,b] \to \mathbb{R}\) is Riemann integrable and 
+\(\lambda \in \mathbb{R}\), then \(\lambda f\) is Riemann integrable and
+\tab[4cm] \(\int_{a}^{b}\lambda f = \lambda \int_{a}^{b}f\)
+
+\subsection*{Answer}
+\(U(\lambda f, [a,b], \mathcal{P}) = \sum sup(\lambda f) \delta(I) =
+\lambda \sum sup(f) \delta(I) = \lambda U(f, [a,b], \mathcal{P})\) \\
+\(\int_{[a,b]}^{+}\lambda f = inf(\lambda U(f, [a,b], \mathcal{P})) =
+\lambda inf(U(f, [a,b], \mathcal{P}))\)\\
+Similarily for \(\int_{[a,b]}^{-}\lambda f = \lambda sup(L(f, [a,b],\mathcal{P}))\)  
+Therefore \(\int_{[a,b]}^{-}\lambda f = \lambda sup(L(f, [a,b],\mathcal{P})) = \lambda inf(U(f, [a,b], \mathcal{P})) = \int_{[a,b]}^{+}\lambda f\)
+\\ Therefore it is Reimann integrable and the equality holds because
+\(\lambda \int_{a}^{b}f = \lambda \int_{[a,b]}^{+}f = \lambda inf(U(f)) = \lambda sup(L(f)) = \lambda \int_{[a,b]}^{-}f = \int_{a}^{b}\lambda f\)
+\(\square\) 
+
+
+\end{document}
+

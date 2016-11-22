@@ -1,0 +1,22 @@
+\documentclass{article}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage{amsfonts}
+\usepackage[margin=1in]{geometry}
+\usepackage[mathscr]{euscript}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\begin{document}
+\title{MA 35300: HW 9}
+\author{Jason Shipp}
+\maketitle
+\section*{Problem 1}
+\subsection*{Answer}
+\tab \(\frac{1-\beta^{n+1}}{1-\beta} = 1 + \beta + \beta^{1} + \dots + \beta^{n}\) \\
+\tab \(1-\beta^{n+1} = (1-\beta)(1+\beta+\beta{1}+\dots+\beta^{n}\)\\
+\tab \(1-\beta^{n+1} = (1-\beta)(\sum\limits_{i=0}^{n}\beta^{i})\) \\
+\tab \(1 = \sum\limits_{i=0}^{n}\beta^{i} - \beta\sum\limits_{i=0}^{n}\beta^{i} + \beta^{n}\beta\) \\
+\tab \(1 = \sum\limits_{i=0}^{n}\beta^{i} - \beta(\sum\limits_{i=0}^{n}\beta^{i} - \beta^{n})\) \\
+\tab \(1 = \sum\limits_{i=0}^{n}\beta^{i} - \beta(\sum\limits_{i=0}^{n-1}\beta^{i})\) \\
+\tab \(1 = \sum\limits_{i=0}^{n}\beta^{i} - \sum\limits_{i=1}^{n}\beta^{i}\) \\
+\tab \(1 = (1 + \beta + \beta^{2} + \dots + \beta^{n}) - (\beta + \beta^{2} + \dots + \beta^{n})\)
+\tab \(1 = 1\) \tab \(\square\)
